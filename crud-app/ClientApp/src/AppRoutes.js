@@ -1,7 +1,7 @@
+import { AddRecipe } from "./components/AddRecipe";
 import { Counter } from "./components/Counter";
 import { FetchData } from "./components/FetchData";
 import { Home } from "./components/Home";
-import ShowRecipes from "./components/ShowRecipes";
 
 const AppRoutes = [
   {
@@ -17,8 +17,8 @@ const AppRoutes = [
     element: <FetchData />
   },
   {
-    path: '/show-recipes',
-    element: <ShowRecipes />
+    path: '/add-recipe',
+    element: <AddRecipe />
   }
 ];
 
