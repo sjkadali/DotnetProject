@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 
 namespace crud_app.Controllers;
- 
+   
     [ApiController]
     [Route("[controller]")]
     public class RecipeController : ControllerBase
@@ -17,16 +17,24 @@ namespace crud_app.Controllers;
             new Recipe() { Id = 6, Recipename = "Cup Cake", ImageId = 6, Category = 1, Description = ""}
         };
 
-        [HttpGet("GetAllRecipes")]
+
+         private readonly ILogger<RecipeController> _logger;
+
+    public RecipeController(ILogger<RecipeController> logger)
+    {
+        _logger = logger;
+    }
+
+        [HttpGet]
         public IEnumerable<Recipe> Get()
         {
             return Recipes;
         }
 
-        [HttpGet("{Category:int}")]
+       /*  [HttpGet]
         public Recipe[] Get(int Category){
             Recipe[] recipes = Recipes.Where(i => i.Category == Category).ToArray();
             return recipes;
-        }
+        } */
 
     }
