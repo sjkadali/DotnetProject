@@ -1,19 +1,19 @@
 const Recipe = ({ recipe: { id, recipename, imageId, description, category } }) => {
     return (
-        <div className="recipe" key={id}>
-          <div>
+        <tr className="recipe" key={id}>
+          <h4>
             <p>{recipename}</p>
-          </div>
+          </h4>
     
-          <div>
+          <p>
             <img src={imageId !== "N/A" ? imageId : "https://via.placeholder.com/400"} alt={recipename} />
-          </div>
+          </p>
     
-          <div>
+          <td>
             <span>{category}</span>
             <h3>{description}</h3>
-          </div>
-        </div>
+          </td>
+        </tr>
       );
 }
 
